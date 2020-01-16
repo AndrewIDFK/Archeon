@@ -1,0 +1,6 @@
+displayName = Archeon
+author = AndrewIDFK
+version = 1.1.8.5
+homepage = https://forums.terraria.org/index.php?threads/the-archeon-mod.77431/
+includePDB = true
+
