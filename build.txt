@@ -1,6 +1,6 @@
-displayName = Archeon
+displayName = Archeon: Resurrection
 author = AndrewIDFK
 version = 1.2
-homepage = https://forums.terraria.org/index.php?threads/the-archeon-mod.77431/
+homepage = https://discord.gg/ZUfzVwdKXt
 includePDB = true
 

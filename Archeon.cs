@@ -9,37 +9,6 @@ namespace Archeon
 {
 	public class Archeon : Mod
 	{
-		public Archeon()
-		{
-			Archeon.instance = this;
-			ModProperties properties = default(ModProperties);
-			properties.Autoload = true;
-			properties.AutoloadGores = true;
-			properties.AutoloadSounds = true;
-			properties.AutoloadBackgrounds = true;
-			base.Properties = properties;
-		}
-	
-		public override void PostSetupContent() 
-		{
-			Mod bossChecklist = ModLoader.GetMod("BossChecklist");
-			if (bossChecklist != null) 
-			{
-				bossChecklist.Call("AddBossWithInfo", "The Hallowed One", 10.5f, (Func<bool>)(() => ArcheonWorld.downedHallowedOne), "Use a [i:" + ItemType("PrismBait") + "] in the hallowed at night.");
-			}
-		}
-
-		public override void UpdateMusic(ref int music, ref MusicPriority priority)
-		{
-			if (Main.myPlayer == -1 || Main.gameMenu || !Main.LocalPlayer.active)
-			{
-				return;
-			}
-			if (Main.LocalPlayer.GetModPlayer<MyPlayer>().zoneStroidBiome)
-			{
-				music = 8;
-			}
-		}
 
 		public override void AddRecipeGroups()
 		{
