@@ -37,7 +37,7 @@ namespace Archeon.Items.Weapons.Magic.PreHM
 		public override void AddRecipes()
 		{
 			ModRecipe modRecipe = new ModRecipe(mod);
-			modRecipe.AddIngredient(ItemID.Obsidian, 8);
+			modRecipe.AddIngredient(ItemID.Obsidian, 12);
 			modRecipe.AddIngredient(ItemID.Book, 1);
 			modRecipe.AddTile(TileID.Anvils);
 			modRecipe.SetResult(this, 1);

@@ -40,7 +40,6 @@ namespace Archeon.Projectiles.Magic
 		private float counter = 0; 
         private float spawnDirection = 0;
         private float previousI = 0; 
-		bool arcs = false;
 		public override void AI()
 		{
 			if(onceDone) 
