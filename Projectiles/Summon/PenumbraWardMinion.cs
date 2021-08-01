@@ -120,7 +120,6 @@ namespace Archeon.Projectiles.Summon
 					num2 *= num4 * 5f;
 					num3 *= num4 * 5f;
 					int num5 = Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, num2 * 1.75f, num3 * 2f, mod.ProjectileType("PenumbraWardProj"), projectile.damage, projectile.knockBack, Main.myPlayer, 0f, 0f);
-					Main.projectile[num5].timeLeft = 150;
 					Main.projectile[num5].netUpdate = true;
 					projectile.netUpdate = true;
 					shootTimer = 0;
