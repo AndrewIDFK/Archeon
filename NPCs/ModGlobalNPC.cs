@@ -11,7 +11,6 @@ namespace Archeon.NPCs
 	public class ModGlobalNPC : GlobalNPC
 	{
 		public bool VyssoniumPoisoning;
-		public bool CorrosionDebuff;
 		public bool ShadoniumDebuff;
 		public bool VyssoniumDebuff;
 		
@@ -26,7 +25,6 @@ namespace Archeon.NPCs
 		public override void ResetEffects(NPC npc)
 		{	
 			VyssoniumPoisoning = false;
-			CorrosionDebuff = false;
 			ShadoniumDebuff = false;
 			VyssoniumDebuff = false;
 		}
@@ -62,20 +60,6 @@ namespace Archeon.NPCs
 					damage = num420;
 				}
 			}
-			
-			if (CorrosionDebuff)
-			{
-				if (npc.lifeRegen > 0)
-				{
-					npc.lifeRegen = 0;
-				}
-				npc.lifeRegen -= 100;
-				if (damage < 12)
-				{
-					damage = 12;
-				}
-			}
-			
 			if (ShadoniumDebuff)
 			{
 				if (npc.lifeRegen > 0)
@@ -88,7 +72,6 @@ namespace Archeon.NPCs
 					damage = 6;
 				}
 			}
-			
 			if (VyssoniumDebuff)
 			{
 				if (npc.lifeRegen > 0)

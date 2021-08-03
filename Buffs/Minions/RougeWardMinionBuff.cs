@@ -18,7 +18,7 @@ namespace Archeon.Buffs.Minions
 		public override void Update(Player player, ref int buffIndex)
 		{
 			MyPlayer modPlayer = player.GetModPlayer<MyPlayer>();
-			if (player.ownedProjectileCounts[mod.ProjectileType("RougeWardMinion")] > 0)
+			if (player.ownedProjectileCounts[mod.ProjectileType("RougeWardMinion")] > 0 && player.ownedProjectileCounts[mod.ProjectileType("RougeWardMinion2")] > 0 )
 			{
 				modPlayer.rougeWard = true;
 			}

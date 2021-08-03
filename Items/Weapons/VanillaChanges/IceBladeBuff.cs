@@ -11,7 +11,7 @@ namespace Archeon.Items.Weapons.VanillaChanges
 		{
 			if (item.type == 724)
 			{
-				item.damage = 22;
+				item.damage = 20;
 				item.useTime = 15;
 				item.useAnimation = 15;
 			}

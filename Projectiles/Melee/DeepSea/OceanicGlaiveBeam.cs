@@ -25,7 +25,7 @@ namespace Archeon.Projectiles.Melee.DeepSea
 		
 		public override void AI()
 		{
-			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, -projectile.velocity.X / 10, -projectile.velocity.Y / 10, mod.ProjectileType("OceanicGlaiveTrail"), projectile.damage, 0, projectile.owner, 0f, 0f);
+			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, -projectile.velocity.X / 10, -projectile.velocity.Y / 10, mod.ProjectileType("OceanicGlaiveTrail"), projectile.damage * 2, 0, projectile.owner, 0f, 0f);
 			
 			Lighting.AddLight(projectile.Center, 0.12f, 0.124f, 0.455f);
 			if (Main.rand.Next(3) == 0)
@@ -45,7 +45,7 @@ namespace Archeon.Projectiles.Melee.DeepSea
 			{
 				Vector2 vector = new Vector2(projectile.Center.X, projectile.Center.Y);
 				float xStuff = Main.rand.Next(-4, 4);
-				Projectile.NewProjectile(vector.X, vector.Y, xStuff, -3.75f, mod.ProjectileType("OceanicGlaiveSpray"), projectile.damage / 2, 2f, Main.myPlayer, 0f, 0f);
+				Projectile.NewProjectile(vector.X, vector.Y, xStuff, -3.75f, mod.ProjectileType("OceanicGlaiveSpray"), projectile.damage, 2f, Main.myPlayer, 0f, 0f);
 			}
 		}
 	}

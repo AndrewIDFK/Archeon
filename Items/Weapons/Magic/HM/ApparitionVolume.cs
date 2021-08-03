@@ -17,12 +17,12 @@ namespace Archeon.Items.Weapons.Magic.HM
 
 		public override void SetDefaults()
 		{
-			item.damage = 52;
+			item.damage = 48;
 			item.magic = true;
 			item.width = 24;
 			item.height = 28;
-			item.useTime = 28;
-			item.useAnimation = 28;
+			item.useTime = 29;
+			item.useAnimation = 29;
 			item.useStyle = 5;
 			item.noMelee = true;
 			item.knockBack = 3f;

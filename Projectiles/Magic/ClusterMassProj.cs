@@ -94,7 +94,7 @@ namespace Archeon.Projectiles.Magic
 			projectile.height = 12;
 			projectile.friendly = true;
 			projectile.penetrate = 1;
-			projectile.minion = true;
+			projectile.magic = true;
 			projectile.ignoreWater = true;
 			projectile.timeLeft = 140;
 		}

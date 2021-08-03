@@ -10,7 +10,7 @@ namespace Archeon.Items.Consumables.Potions
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Potion of Corruption");
+			DisplayName.SetDefault("Corrupt Potion");
 			Tooltip.SetDefault("You're not sure if you want to consume it \nDefense increased by 12");
 		}
 

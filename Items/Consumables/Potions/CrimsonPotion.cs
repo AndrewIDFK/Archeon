@@ -10,7 +10,7 @@ namespace Archeon.Items.Consumables.Potions
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Potion of Infection");
+			DisplayName.SetDefault("Infectious Potion");
 			Tooltip.SetDefault("You can see something moving around in it \nIncreases all damage by 20%");
 		}
 

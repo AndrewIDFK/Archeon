@@ -13,17 +13,17 @@ namespace Archeon.Items.Weapons.Magic.PreHM
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Cursed Book");
-			Tooltip.SetDefault("A book written by a Salem witch");
+			Tooltip.SetDefault("A spell-book written by a Salem witch");
 		}
 
 		public override void SetDefaults()
 		{
-			item.damage = 37;
+			item.damage = 26;
 			item.magic = true;
 			item.width = 24;
 			item.height = 28;
-			item.useTime = 22;
-			item.useAnimation = 22;
+			item.useTime = 24;
+			item.useAnimation = 24;
 			item.useStyle = 5;
 			item.noMelee = true;
 			item.knockBack = 3.5f;
@@ -33,7 +33,7 @@ namespace Archeon.Items.Weapons.Magic.PreHM
 			item.UseSound = SoundID.Item21;
 			item.autoReuse = true;
 			item.shoot = mod.ProjectileType("CursedBookProj");
-			item.shootSpeed = 8f;
+			item.shootSpeed = 8.5f;
 		}
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
@@ -58,8 +58,8 @@ namespace Archeon.Items.Weapons.Magic.PreHM
 		public override void AddRecipes()
 		{
 			ModRecipe modRecipe = new ModRecipe(mod);
-			modRecipe.AddIngredient(ItemID.ShadowScale, 14);
-			modRecipe.AddIngredient(ItemID.Amethyst, 1);
+			modRecipe.AddIngredient(ItemID.ShadowScale, 20);
+			modRecipe.AddIngredient(ItemID.Amethyst, 5);
 			modRecipe.AddTile(TileID.Anvils);
 			modRecipe.SetResult(this, 1);
 			modRecipe.AddRecipe();

@@ -18,14 +18,14 @@ namespace Archeon.Items.Weapons.Melee.HM
 		public override void SetDefaults()
 		{
 			item.melee = true;
-			item.width = 40;
+			item.width = 52;
 			item.height = 50;
 			item.knockBack = 6f;
-			item.value = Item.buyPrice(0, 12, 0, 0);
+			item.value = Item.buyPrice(0, 10, 0, 0);
 			item.rare = 6;
 			item.UseSound = SoundID.Item1;
-			item.useTime = 25;
-			item.useAnimation = 25;
+			item.useTime = 22;
+			item.useAnimation = 22;
 			item.damage = 38;
 			item.shootSpeed = 5f;
 			item.useStyle = 5;

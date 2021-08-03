@@ -17,12 +17,12 @@ namespace Archeon.Items.Weapons.Melee.PreHM
 
 		public override void SetDefaults()
 		{
-			item.damage = 38;
+			item.damage = 34;
 			item.melee = true;
 			item.width = 38;
 			item.height = 38;
-			item.useTime = 26;
-			item.useAnimation = 26;
+			item.useTime = 28;
+			item.useAnimation = 28;
 			item.useStyle = 1;
 			item.noUseGraphic = true;
 			item.noMelee = true;
@@ -32,7 +32,7 @@ namespace Archeon.Items.Weapons.Melee.PreHM
 			item.rare = 3;
 			item.UseSound = SoundID.Item1;
 			item.shoot = mod.ProjectileType("MoltenDaggerProj");
-			item.shootSpeed = 17.5f;
+			item.shootSpeed = 16f;
 		}
 
 		public override void AddRecipes()
@@ -40,12 +40,6 @@ namespace Archeon.Items.Weapons.Melee.PreHM
 			ModRecipe modRecipe = new ModRecipe(mod);
 			modRecipe.AddIngredient(ItemID.HellstoneBar, 15);
 			modRecipe.AddIngredient(ItemID.Obsidian, 5);
-			modRecipe.AddTile(TileID.Anvils);
-			modRecipe.SetResult(this, 1);
-			modRecipe.AddRecipe();
-			
-			modRecipe = new ModRecipe(mod);
-			modRecipe.AddIngredient(mod.ItemType("MoltenDaggerThrown"), 1);
 			modRecipe.AddTile(TileID.Anvils);
 			modRecipe.SetResult(this, 1);
 			modRecipe.AddRecipe();

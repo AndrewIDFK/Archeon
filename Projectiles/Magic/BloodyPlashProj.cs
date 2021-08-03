@@ -33,7 +33,7 @@ namespace Archeon.Projectiles.Magic
 		public override void AI()
 		{
 			Lighting.AddLight(projectile.Center, 0.230f, 0.094f, 0.073f);
-				
+		
 			int num = Dust.NewDust(projectile.position, projectile.width, projectile.height, 114, projectile.velocity.X / 2, projectile.velocity.Y / 2, 100, default(Color), 1.4f);
 			Main.dust[num].noGravity = true;
 			Main.dust[num].velocity /= 2;
@@ -204,7 +204,7 @@ namespace Archeon.Projectiles.Magic
 				Main.dust[num164].velocity *= 0f;
 				Main.dust[num164].noGravity = true;
 				Main.dust[num164].color = Color.Red;
-				Main.dust[num164].scale = 0.97f;
+				Main.dust[num164].scale = 1.05f;
 			}
 		}
 		

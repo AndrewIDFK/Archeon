@@ -41,9 +41,9 @@ namespace Archeon.Projectiles.Melee
 				Main.dust[num].noLight = true;
 			}
 			
-			float rad = Main.rand.Next(40, 70);
+			float rad = Main.rand.Next(50, 90);
 			double num3 = (double)(0.69f / 6f);
-			for (int i = 0; i < 5; i++)
+			for (int i = 0; i < 3; i++)
 			{
 				Vector2 vector = new Vector2(projectile.Center.X, projectile.Center.Y);
 				double num4 = num3 * (double)(i + i * i) / 2.0 + (double)(rad * (float)i);

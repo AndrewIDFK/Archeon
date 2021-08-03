@@ -26,10 +26,11 @@ namespace Archeon.Items.Weapons.Melee.PreHM
 			item.UseSound = SoundID.Item1;
 			item.useTime = 30;
 			item.useAnimation = 30;
-			item.damage = 26;
+			item.damage = 36;
 			item.shootSpeed = 4.5f;
 			item.useStyle = 5;
 			item.noUseGraphic = true;
+			item.autoReuse = true;
 			item.shoot = mod.ProjectileType("DSGSpear");
 		}
 		

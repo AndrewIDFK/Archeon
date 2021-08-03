@@ -7,40 +7,38 @@ using static Terraria.ModLoader.ModContent;
 
 namespace Archeon.Items.Weapons.Melee.PreHM
 {
-	public class QueensGambit : ModItem
+	public class Bloodthirst : ModItem
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Queen's Gambit");
-			Tooltip.SetDefault("Summons killer bees when it breaks");
+			DisplayName.SetDefault("Bloodthirst");
+			Tooltip.SetDefault("Shatters into blood in the air");
 		}
 
 		public override void SetDefaults()
 		{
-			item.damage = 25;
+			item.damage = 28;
 			item.melee = true;
 			item.width = 38;
 			item.height = 38;
-			item.useTime = 24;
-			item.useAnimation = 24;
+			item.useTime = 29;
+			item.useAnimation = 29;
 			item.useStyle = 1;
 			item.noUseGraphic = true;
 			item.noMelee = true;
 			item.autoReuse = true;
-			item.knockBack = 1.5f;
-			item.value = Item.buyPrice(0, 2, 05, 0);
-			item.rare = 3;
+			item.knockBack = 2f;
+			item.value = Item.buyPrice(0, 2, 30, 0);
+			item.rare = 4;
 			item.UseSound = SoundID.Item1;
-			item.shoot = mod.ProjectileType("QueensGambitProj");
-			item.shootSpeed = 14f;
+			item.shoot = mod.ProjectileType("BloodthirstProj");
+			item.shootSpeed = 15.5f;
 		}
 
 		public override void AddRecipes()
 		{
 			ModRecipe modRecipe = new ModRecipe(mod);
-			modRecipe.AddIngredient(ItemID.BeeWax, 25);
-			modRecipe.AddIngredient(ItemID.Stinger, 5);
-			modRecipe.AddIngredient(ItemID.Obsidian, 10);
+			modRecipe.AddIngredient(mod.ItemType("VyssoniumBar"), 20);
 			modRecipe.AddTile(TileID.Anvils);
 			modRecipe.SetResult(this, 1);
 			modRecipe.AddRecipe();

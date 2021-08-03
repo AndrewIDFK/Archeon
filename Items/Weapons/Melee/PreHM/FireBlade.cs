@@ -17,7 +17,7 @@ namespace Archeon.Items.Weapons.Melee.PreHM
 
 		public override void SetDefaults()
 		{
-			item.damage = 28;
+			item.damage = 26;
 			item.melee = true;
 			item.width = 34;
 			item.height = 40;

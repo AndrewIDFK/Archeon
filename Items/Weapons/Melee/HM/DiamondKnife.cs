@@ -11,18 +11,18 @@ namespace Archeon.Items.Weapons.Melee.HM
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Diamond Knife");
-			Tooltip.SetDefault("A throwable knife that permanently decreases enemies defense \nEvery hit decreases defense by 5%");
+			DisplayName.SetDefault("Piercing Dagger");
+			Tooltip.SetDefault("Permanently decreases enemies defense \nEvery hit decreases defense by 5%");
 		}
 
 		public override void SetDefaults()
 		{
-			item.damage = 45;
+			item.damage = 52;
 			item.melee = true;
 			item.width = 38;
 			item.height = 38;
-			item.useTime = 16;
-			item.useAnimation = 16;
+			item.useTime = 18;
+			item.useAnimation = 18;
 			item.useStyle = 1;
 			item.noUseGraphic = true;
 			item.noMelee = true;
@@ -50,12 +50,6 @@ namespace Archeon.Items.Weapons.Melee.HM
 			modRecipe.AddIngredient(520, 5);
 			modRecipe.AddIngredient(521, 5);
 			modRecipe.AddIngredient(502, 10);
-			modRecipe.AddTile(134);
-			modRecipe.SetResult(this, 1);
-			modRecipe.AddRecipe();
-			
-			modRecipe = new ModRecipe(mod);
-			modRecipe.AddIngredient(mod.ItemType("DiamondKnifeThrown"), 1);
 			modRecipe.AddTile(134);
 			modRecipe.SetResult(this, 1);
 			modRecipe.AddRecipe();

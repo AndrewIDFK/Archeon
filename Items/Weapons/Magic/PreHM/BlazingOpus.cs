@@ -16,7 +16,7 @@ namespace Archeon.Items.Weapons.Magic.PreHM
 
 		public override void SetDefaults()
 		{
-			item.damage = 38;
+			item.damage = 34;
 			item.magic = true;
 			item.width = 24;
 			item.height = 28;

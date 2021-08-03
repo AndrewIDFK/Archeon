@@ -48,5 +48,15 @@ namespace Archeon.Items.Weapons.Magic.PreHM
 			
 			return false;
 		}
+		
+		public override void AddRecipes()
+		{
+			ModRecipe modRecipe = new ModRecipe(mod);
+			modRecipe.AddIngredient(mod.ItemType("VyssoniumBar"), 22);
+			modRecipe.AddIngredient(ItemID.CrimtaneBar, 8);
+			modRecipe.AddTile(TileID.Anvils);
+			modRecipe.SetResult(this, 1);
+			modRecipe.AddRecipe();
+		}
 	}
 }

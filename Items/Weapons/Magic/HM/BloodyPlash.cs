@@ -52,8 +52,9 @@ namespace Archeon.Items.Weapons.Magic.HM
 		public override void AddRecipes()
 		{
 			ModRecipe modRecipe = new ModRecipe(mod);
-			modRecipe.AddIngredient(mod.ItemType("RockSteeleBar"), 1);
 			modRecipe.AddIngredient(mod.ItemType("ClusterMass"), 1);
+			modRecipe.AddIngredient(ItemID.Ichor, 10);
+			modRecipe.AddIngredient(ItemID.SoulofNight, 5);
 			modRecipe.AddTile(TileID.MythrilAnvil);
 			modRecipe.SetResult(this, 1);
 			modRecipe.AddRecipe();
