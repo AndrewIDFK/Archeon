@@ -12,7 +12,6 @@ namespace Archeon.NPCs
 	{
 		public bool VyssoniumPoisoning;
 		public bool ShadoniumDebuff;
-		public bool VyssoniumDebuff;
 		
 		public override bool InstancePerEntity
 		{
@@ -26,7 +25,6 @@ namespace Archeon.NPCs
 		{	
 			VyssoniumPoisoning = false;
 			ShadoniumDebuff = false;
-			VyssoniumDebuff = false;
 		}
 		
 		public override void SetupShop(int type, Chest shop, ref int nextSlot)
@@ -70,18 +68,6 @@ namespace Archeon.NPCs
 				if (damage < 6)
 				{
 					damage = 6;
-				}
-			}
-			if (VyssoniumDebuff)
-			{
-				if (npc.lifeRegen > 0)
-				{
-					npc.lifeRegen = 0;
-				}
-				npc.lifeRegen -= 40;
-				if (damage < 12)
-				{
-					damage = 12;
 				}
 			}
 		}

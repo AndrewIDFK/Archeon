@@ -17,29 +17,35 @@ namespace Archeon.Buffs.Debuffs
 		
 		public override void SetDefaults()
 		{
-			DisplayName.SetDefault("Shadow's Bite");
+			DisplayName.SetDefault("Boiling Blood");
 			Description.SetDefault("You're being corrupted from the inside out");
 		}
-
+		
 		public override void Update(NPC npc, ref int buffIndex)
-		{
-			npc.GetGlobalNPC<ModGlobalNPC>().VyssoniumDebuff = true;
-			
-			for (int i = 0; i < 3; i++)
+		{		
+			if(Main.rand.Next(6) == 0)
+			{ 				
+				int num = Dust.NewDust(new Vector2(npc.position.X, npc.position.Y + 1f), npc.width + 1, npc.height + 2, 125, npc.velocity.X * 0.5f, npc.velocity.Y * 0.4f, 64, default(Color), 1.2f);
+				Main.dust[num].noGravity = true;
+				Main.dust[num].scale = 0.95f;
+				Main.dust[num].color = Color.Crimson;
+			}
+		
+			if(Main.rand.Next(11) == 0)
 			{
-				if(Main.rand.Next(1) == 0)
-				{ 				
-					int num = Dust.NewDust(new Vector2(npc.position.X, npc.position.Y + 1f), npc.width + 1, npc.height + 2, 119, npc.velocity.X * 0.5f, npc.velocity.Y * 0.4f, 64, default(Color), 1.2f);
-					Main.dust[num].noGravity = true;
-					Main.dust[num].scale = 0.95f;
-					Main.dust[num].color = Color.Crimson;
-				}
+				int num168 = Dust.NewDust(new Vector2(npc.position.X, npc.position.Y + 1f), npc.width + 1, npc.height + 2, 114, npc.velocity.X * 0.5f, npc.velocity.Y * 0.4f, 64, default(Color), 1.2f);
+				Main.dust[num168].noGravity = true;
+				Main.dust[num168].color = Color.Red;
+			}
 			
-				if(Main.rand.Next(2) == 0)
+		
+			if(Main.rand.Next(75) == 69)
+			{
+				for (int i = 0; i < Main.rand.Next(1, 3); i++)
 				{
-					int num168 = Dust.NewDust(new Vector2(npc.position.X, npc.position.Y + 1f), npc.width + 1, npc.height + 2, 140, npc.velocity.X * 0.5f, npc.velocity.Y * 0.4f, 64, default(Color), 1.2f);
-					Main.dust[num168].noGravity = true;
-					Main.dust[num168].color = Color.Red;
+					float xStuff = Main.rand.Next(-5, 5);
+					float yStuff = Main.rand.Next(-5, -4);
+					Projectile.NewProjectile(npc.Center.X, npc.position.Y, xStuff, yStuff, mod.ProjectileType("BloodthirstBloodProj"), 18, 0.5f, Main.myPlayer, 0f, 0f);
 				}
 			}
 		}
