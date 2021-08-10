@@ -10,18 +10,15 @@ namespace Archeon
 {
 	public class MyPlayer : ModPlayer
 	{
-		public bool ShadoniumHelmet2;	
-		public bool VyssoniumHelmet1;	
-		public bool VyssoniumHelmet2;
+		public bool BloodiedCharge;	
+		public int BloodiedChargeCount;	
 		public bool penumbraWard;
 		public bool rougeWard;
 		public bool MarkOfCain;
 		
 		public override void ResetEffects()
 		{
-			ShadoniumHelmet2 = false;
-			VyssoniumHelmet1 = false;
-			VyssoniumHelmet2 = false;		
+			BloodiedCharge = false;		
 			penumbraWard = false;
 			rougeWard = false;
 			MarkOfCain = false;
@@ -30,7 +27,6 @@ namespace Archeon
 		int MOCHurt = 500;
 		public override void PostUpdateMiscEffects()
 		{			
-
 			if(MarkOfCain)
 			{
 				MOCHurt++;
@@ -60,60 +56,100 @@ namespace Archeon
 					MOCHurt = 0;
 				}
 			}
+			if(BloodiedCharge)
+			{
+				if(BloodiedChargeCount >= 6)
+				{
+					BloodiedChargeCount = 6;
+				}
+			}
+			else BloodiedChargeCount = -1;
 		}
 		
 		public override void PostHurt(bool pvp, bool quiet, double damage, int hitDirection, bool crit)
 		{
 			if (player.whoAmI == Main.myPlayer)
 			{
-				if (ShadoniumHelmet2 && damage > 30)
+				if (BloodiedCharge)
 				{
-					player.immuneTime += 15;
-					player.AddBuff(mod.BuffType("ShadoniumArmorSpeed"), 115, true);
-				}
-				if (VyssoniumHelmet2 && damage > 0)
-				{
-					
-					player.AddBuff(mod.BuffType("VyssoniumArmorMeleeSpeed"), 240, true);
+					BloodiedChargeCount = 0;
 				}
 			}
 		}
 		
 		public override void OnHitNPC(Item item, NPC target, int damage, float knockback, bool crit)
 		{
-			if (VyssoniumHelmet1)
+			if (player.whoAmI == Main.myPlayer)
 			{
-				if (Main.rand.Next(2) == 0)
+				if (BloodiedCharge)
 				{
-					target.AddBuff(mod.BuffType("VyssoniumPoisoning"), 165, false);
+					if(Main.rand.Next(6) == 1)
+					{
+						BloodiedChargeCount++;			
+						if(player.ownedProjectileCounts[mod.ProjectileType("BloodiedCharge")] == 0)
+						{
+							Projectile.NewProjectile(player.Center.X, player.Center.Y, 0f, 0f, mod.ProjectileType("BloodiedCharge"), 0, 0, Main.myPlayer, 0f, 0f);
+						}
+						else if (player.ownedProjectileCounts[mod.ProjectileType("BloodiedCharge2")] == 0)
+						{
+							Projectile.NewProjectile(player.Center.X, player.Center.Y, 0f, 0f, mod.ProjectileType("BloodiedCharge2"), 0, 0, Main.myPlayer, 0f, 0f);
+						}
+						else if (player.ownedProjectileCounts[mod.ProjectileType("BloodiedCharge3")] == 0)
+						{
+							Projectile.NewProjectile(player.Center.X, player.Center.Y, 0f, 0f, mod.ProjectileType("BloodiedCharge3"), 0, 0, Main.myPlayer, 0f, 0f);
+						}
+						else if (player.ownedProjectileCounts[mod.ProjectileType("BloodiedCharge4")] == 0)
+						{
+							Projectile.NewProjectile(player.Center.X, player.Center.Y, 0f, 0f, mod.ProjectileType("BloodiedCharge4"), 0, 0, Main.myPlayer, 0f, 0f);
+						}
+						else if (player.ownedProjectileCounts[mod.ProjectileType("BloodiedCharge5")] == 0)
+						{
+							Projectile.NewProjectile(player.Center.X, player.Center.Y, 0f, 0f, mod.ProjectileType("BloodiedCharge5"), 0, 0, Main.myPlayer, 0f, 0f);
+						}
+					}
 				}
-				else
+				if(MarkOfCain)
 				{
-					target.AddBuff(mod.BuffType("VyssoniumPoisoning"), 115, false);
+					MOCHurt -= 100;
 				}
-			}
-			if(MarkOfCain)
-			{
-				MOCHurt -= 100;
 			}
 		}
 		
 		public override void OnHitNPCWithProj(Projectile proj, NPC target, int damage, float knockback, bool crit)
 		{
-			if (VyssoniumHelmet1)
+			if (player.whoAmI == Main.myPlayer)
 			{
-				if (Main.rand.Next(2) == 0)
+				if (BloodiedCharge)
 				{
-					target.AddBuff(mod.BuffType("VyssoniumPoisoning"), 165, false);
+					if(Main.rand.Next(4) == 3)
+					{
+						BloodiedChargeCount++;			
+						if(player.ownedProjectileCounts[mod.ProjectileType("BloodiedCharge")] == 0)
+						{
+							Projectile.NewProjectile(player.Center.X, player.Center.Y, 0f, 0f, mod.ProjectileType("BloodiedCharge"), 0, 0, Main.myPlayer, 0f, 0f);
+						}
+						else if (player.ownedProjectileCounts[mod.ProjectileType("BloodiedCharge2")] == 0)
+						{
+							Projectile.NewProjectile(player.Center.X, player.Center.Y, 0f, 0f, mod.ProjectileType("BloodiedCharge2"), 0, 0, Main.myPlayer, 0f, 0f);
+						}
+						else if (player.ownedProjectileCounts[mod.ProjectileType("BloodiedCharge3")] == 0)
+						{
+							Projectile.NewProjectile(player.Center.X, player.Center.Y, 0f, 0f, mod.ProjectileType("BloodiedCharge3"), 0, 0, Main.myPlayer, 0f, 0f);
+						}
+						else if (player.ownedProjectileCounts[mod.ProjectileType("BloodiedCharge4")] == 0)
+						{
+							Projectile.NewProjectile(player.Center.X, player.Center.Y, 0f, 0f, mod.ProjectileType("BloodiedCharge4"), 0, 0, Main.myPlayer, 0f, 0f);
+						}
+						else if (player.ownedProjectileCounts[mod.ProjectileType("BloodiedCharge5")] == 0)
+						{
+							Projectile.NewProjectile(player.Center.X, player.Center.Y, 0f, 0f, mod.ProjectileType("BloodiedCharge5"), 0, 0, Main.myPlayer, 0f, 0f);
+						}
+					}
 				}
-				else
+				if(MarkOfCain)
 				{
-					target.AddBuff(mod.BuffType("VyssoniumPoisoning"), 115, false);
+					MOCHurt -= 100;
 				}
-			}
-			if(MarkOfCain)
-			{
-				MOCHurt -= 100;
 			}
 		}
 	}

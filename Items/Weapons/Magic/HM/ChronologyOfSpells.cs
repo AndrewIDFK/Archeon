@@ -52,13 +52,10 @@ namespace Archeon.Items.Weapons.Magic.HM
 		public override void AddRecipes()
 		{
 			ModRecipe modRecipe = new ModRecipe(mod);
-			modRecipe.AddIngredient(mod.ItemType("SindomsCodex"), 1);
-			modRecipe.AddIngredient(mod.ItemType("BlazingOpus"), 1);
-			modRecipe.AddIngredient(mod.ItemType("FrozenOpus"), 1);
-			modRecipe.AddIngredient(ItemID.SoulofLight, 10);
-			modRecipe.AddIngredient(ItemID.SoulofNight, 10);
-			modRecipe.AddIngredient(ItemID.HallowedBar, 12);
-			modRecipe.AddTile(TileID.Bookcases);
+			modRecipe.AddIngredient(mod.ItemType("ChronicleOfSindom"), 1);
+			modRecipe.AddIngredient(mod.ItemType("PlanetaryOrbit"), 1);
+			modRecipe.AddIngredient(mod.ItemType("AncientFlame"), 5);
+			modRecipe.AddTile(TileID.MythrilAnvil);
 			modRecipe.SetResult(this, 1);
 			modRecipe.AddRecipe();
 		}

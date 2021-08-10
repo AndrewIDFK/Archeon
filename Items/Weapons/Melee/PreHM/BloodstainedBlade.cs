@@ -19,8 +19,8 @@ namespace Archeon.Items.Weapons.Melee.PreHM
 		{
 			item.damage = 30;
 			item.melee = true;
-			item.width = 34;
-			item.height = 40;
+			item.width = 32;
+			item.height = 36;
 			item.useTime = 22;
 			item.useAnimation = 22;
 			item.useStyle = 1;

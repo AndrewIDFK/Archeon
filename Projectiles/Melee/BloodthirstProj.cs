@@ -12,9 +12,9 @@ namespace Archeon.Projectiles.Melee
 	{
 		public override void SetDefaults()
 		{
-			projectile.width = 16;
+			projectile.width = 14;
 			projectile.height = 16;
-			projectile.timeLeft = 120;
+			projectile.timeLeft = 140;
 			projectile.penetrate = 2;
 			projectile.friendly = true;
 			projectile.ignoreWater = true;
@@ -120,7 +120,7 @@ namespace Archeon.Projectiles.Melee
 			for (int i = 0; i < 3; i++)
 			{
 				Vector2 value = Utils.RotatedByRandom(projectile.velocity, (double)MathHelper.ToRadians(18.5f));
-				Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, value.X, value.Y, mod.ProjectileType("BloodthirstBloodProj"), projectile.damage, projectile.knockBack / 2, projectile.owner, 0f, 0f);
+				Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, value.X, value.Y, mod.ProjectileType("BloodthirstBloodProj"), projectile.damage / 2, projectile.knockBack / 2, projectile.owner, 0f, 0f);
 			}
 		}
 	}

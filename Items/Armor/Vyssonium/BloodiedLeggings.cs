@@ -1,17 +1,18 @@
 ﻿using System;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 
-namespace Archeon.Items.Armor.Shadonium
+namespace Archeon.Items.Armor.Vyssonium
 {
 	[AutoloadEquip(EquipType.Legs)]
-	public class ShadoniumLeggings : ModItem
+	public class BloodiedLeggings : ModItem
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Shadonium Greaves");
-			Tooltip.SetDefault("10% increased movement speed \nReduces damage taken by 4%");
+			DisplayName.SetDefault("Bloodied Leggings");
+			Tooltip.SetDefault("10% increased movement speed");
 		}
 
 		public override void SetDefaults()
@@ -26,15 +27,14 @@ namespace Archeon.Items.Armor.Shadonium
 		public override void UpdateEquip(Player player)
 		{
 			player.moveSpeed += 0.1f;
-			player.endurance += 0.04f;
 		}
 
 		public override void AddRecipes()
 		{
 			ModRecipe modRecipe = new ModRecipe(mod);
-			modRecipe.AddIngredient(mod.ItemType("ShadoniumBar"), 14);
-			modRecipe.AddIngredient(86, 6);
-			modRecipe.AddTile(16);
+			modRecipe.AddIngredient(mod.ItemType("VyssoniumBar"), 20);
+			modRecipe.AddIngredient(ItemID.Bone, 10);
+			modRecipe.AddTile(TileID.Anvils);
 			modRecipe.SetResult(this, 1);
 			modRecipe.AddRecipe();
 		}

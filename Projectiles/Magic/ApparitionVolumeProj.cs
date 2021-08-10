@@ -106,7 +106,7 @@ namespace Archeon.Projectiles.Magic
 
 		public override void AI()
 		{
-			if(Main.rand.Next(1) == 0)
+			if(Main.rand.Next(3) == 0)
 			{
 				int num = Dust.NewDust(projectile.position, projectile.width, projectile.height, 234, projectile.velocity.X, projectile.velocity.Y, 100, default(Color), 1.2f);
 				Main.dust[num].noGravity = true;
@@ -119,7 +119,7 @@ namespace Archeon.Projectiles.Magic
 				else Main.dust[num].scale -= 0.04f;
 			}
 			
-			if(Main.rand.Next(9) == 0)
+			if(Main.rand.Next(12) == 0)
 			{
 				int num1 = Dust.NewDust(projectile.position, projectile.width, projectile.height, 134, projectile.velocity.X, projectile.velocity.Y, 100, default(Color), 1.8f);
 				Main.dust[num1].noGravity = true;

@@ -1,18 +1,19 @@
 ﻿using System;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 
 namespace Archeon.Items.Armor.Vyssonium
 {
 	[AutoloadEquip(EquipType.Body)]
-	public class VyssoniumChestplate : ModItem
+	public class BloodiedChestplate : ModItem
 	{
 		public override void SetStaticDefaults()
 		{
 			base.SetStaticDefaults();
-			DisplayName.SetDefault("Vyssonium Breastplate");
-			Tooltip.SetDefault("6% increased melee speed and 4% melee damage");
+			DisplayName.SetDefault("Bloodied Breastplate");
+			Tooltip.SetDefault("5% increased all damage");
 		}
 
 		public override void SetDefaults()
@@ -26,16 +27,19 @@ namespace Archeon.Items.Armor.Vyssonium
 
 		public override void UpdateEquip(Player player)
 		{
-			player.meleeSpeed += 0.06f;
-			player.meleeDamage += 0.04f;
+			player.meleeDamage += 0.05f;
+			player.rangedDamage += 0.05f;
+			player.thrownDamage += 0.05f;
+			player.magicDamage += 0.05f;
+			player.minionDamage += 0.05f;
 		}
 
 		public override void AddRecipes()
 		{
 			ModRecipe modRecipe = new ModRecipe(mod);
-			modRecipe.AddIngredient(mod.ItemType("VyssoniumBar"), 18);
-			modRecipe.AddIngredient(1329, 10);
-			modRecipe.AddTile(16);
+			modRecipe.AddIngredient(mod.ItemType("VyssoniumBar"), 25);
+			modRecipe.AddIngredient(ItemID.Bone, 15);
+			modRecipe.AddTile(TileID.Anvils);
 			modRecipe.SetResult(this, 1);
 			modRecipe.AddRecipe();
 		}

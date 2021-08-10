@@ -22,7 +22,7 @@ namespace Archeon.Projectiles.Magic
 			projectile.width = 12;
 			projectile.height = 12;
 			projectile.friendly = true;
-			projectile.penetrate = 4;
+			projectile.penetrate = 15;
 			projectile.timeLeft = 240;
 			projectile.magic = true;
 			Main.PlaySound(SoundID.Item15, projectile.position);
@@ -55,7 +55,7 @@ namespace Archeon.Projectiles.Magic
 				{
 					if(projectile.ai[0] == 0)
 					{
-						projectile.velocity *= 0.95f;
+						projectile.velocity *= 1.15f;
 						secondProjectile = Main.projectile[Projectile.NewProjectile(projectile.Center, projectile.velocity, mod.ProjectileType("ChronicleOfSindomProj2"), projectile.damage, projectile.knockBack, projectile.owner, 1, projectile.whoAmI)];
 					}
 				}
@@ -86,10 +86,10 @@ namespace Archeon.Projectiles.Magic
 			}
 			if(changeTimer < 20)
 			{
-				for (int num163 = 0; num163 < 15; num163++)
+				for (int num163 = 0; num163 < 5; num163++)
 				{
-					float x2 = projectile.Center.X - projectile.velocity.X / 10f * (float)num163;
-					float y2 = projectile.Center.Y - projectile.velocity.Y / 10f * (float)num163;
+					float x2 = projectile.Center.X - projectile.velocity.X / 5 * (float)num163;
+					float y2 = projectile.Center.Y - projectile.velocity.Y / 5 * (float)num163;
 					int num164 = Dust.NewDust(new Vector2(x2, y2), 1, 1, 159);	
 					Main.dust[num164].position.X = x2;
 					Main.dust[num164].position.Y = y2;
@@ -100,9 +100,9 @@ namespace Archeon.Projectiles.Magic
 			}
 			else
 			{
-				for (int num163 = 0; num163 < 10; num163++)
+				for (int num163 = 0; num163 < 4; num163++)
 				{
-					float x2 = projectile.Center.X - projectile.velocity.X / 10f * (float)num163;
+					float x2 = projectile.Center.X - projectile.velocity.X / 4 * (float)num163;
 					float y2 = projectile.Center.Y - projectile.velocity.Y / 10f * (float)num163;
 					int num164 = Dust.NewDust(new Vector2(x2, y2), 1, 1, 6);	
 					Main.dust[num164].position.X = x2;
@@ -127,7 +127,7 @@ namespace Archeon.Projectiles.Magic
 					Main.dust[num2].velocity *= 3.75f;
 				}
 				
-				for (int eef = 0; eef < 4; eef++)
+				for (int eef = 0; eef < Main.rand.Next(2, 3); eef++)
 				{
 					float stuff = Main.rand.Next(-7, 7);
 					float stuff2 = Main.rand.Next(-7, 7);
@@ -143,6 +143,7 @@ namespace Archeon.Projectiles.Magic
 			{
 				target.AddBuff(24, 220, false);
 			}
+			target.immune[projectile.owner] = 4;
 		}
 		
 		public override void Kill(int timeLeft)
@@ -186,7 +187,7 @@ namespace Archeon.Projectiles.Magic
 			projectile.width = 12;
 			projectile.height = 12;
 			projectile.friendly = true;
-			projectile.penetrate = 4;
+			projectile.penetrate = 15;
 			projectile.timeLeft = 240;
 			projectile.magic = true;
 			Main.PlaySound(SoundID.Item15, projectile.position);
@@ -219,7 +220,7 @@ namespace Archeon.Projectiles.Magic
 				{
 					if(projectile.ai[0] == 0)
 					{
-						projectile.velocity *= 0.95f;
+						projectile.velocity *= 1.15f;
 					}
 				}
 				onceDone = false;
@@ -249,10 +250,10 @@ namespace Archeon.Projectiles.Magic
 			}
 			if(changeTimer < 20)
 			{
-				for (int num163 = 0; num163 < 15; num163++)
+				for (int num163 = 0; num163 < 5; num163++)
 				{
-					float x2 = projectile.Center.X - projectile.velocity.X / 10f * (float)num163;
-					float y2 = projectile.Center.Y - projectile.velocity.Y / 10f * (float)num163;
+					float x2 = projectile.Center.X - projectile.velocity.X / 5 * (float)num163;
+					float y2 = projectile.Center.Y - projectile.velocity.Y / 5 * (float)num163;
 					int num164 = Dust.NewDust(new Vector2(x2, y2), 1, 1, 159);	
 					Main.dust[num164].position.X = x2;
 					Main.dust[num164].position.Y = y2;
@@ -263,10 +264,10 @@ namespace Archeon.Projectiles.Magic
 			}
 			else
 			{
-				for (int num163 = 0; num163 < 10; num163++)
+				for (int num163 = 0; num163 < 4; num163++)
 				{
-					float x2 = projectile.Center.X - projectile.velocity.X / 10f * (float)num163;
-					float y2 = projectile.Center.Y - projectile.velocity.Y / 10f * (float)num163;
+					float x2 = projectile.Center.X - projectile.velocity.X / 4 * (float)num163;
+					float y2 = projectile.Center.Y - projectile.velocity.Y / 4 * (float)num163;
 					int num164 = Dust.NewDust(new Vector2(x2, y2), 1, 1, 92);	
 					Main.dust[num164].position.X = x2;
 					Main.dust[num164].position.Y = y2;
@@ -290,7 +291,7 @@ namespace Archeon.Projectiles.Magic
 					Main.dust[num2].velocity *= 3f;
 				}
 				
-				for (int eef = 0; eef < 4; eef++)
+				for (int eef = 0; eef < Main.rand.Next(2, 3); eef++)
 				{
 					float stuff = Main.rand.Next(-7, 7);
 					float stuff2 = Main.rand.Next(-7, 7);
@@ -306,6 +307,7 @@ namespace Archeon.Projectiles.Magic
 			{
 				target.AddBuff(44, 220, false);
 			}
+			target.immune[projectile.owner] = 4;
 		}
 
 		public override void Kill(int timeLeft)
@@ -353,6 +355,7 @@ namespace Archeon.Projectiles.Magic
 			projectile.magic = true;
 			projectile.ignoreWater = true;
 			projectile.timeLeft = 45;
+			projectile.extraUpdates = 1;
 		}
 
 		public override void AI()
@@ -404,6 +407,7 @@ namespace Archeon.Projectiles.Magic
 			projectile.magic = true;
 			projectile.ignoreWater = true;
 			projectile.timeLeft = 45;
+			projectile.extraUpdates = 1;
 		}
 
 		public override void AI()

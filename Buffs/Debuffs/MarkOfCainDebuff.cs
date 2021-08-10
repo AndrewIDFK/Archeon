@@ -25,7 +25,6 @@ namespace Archeon.Buffs.Debuffs
 		{
 			for (int i = 0; i < 2; i++)
 			{
-			
 				if(Main.rand.Next(2) == 0)
 				{
 					int num168 = Dust.NewDust(new Vector2(npc.position.X, npc.position.Y + 1f), npc.width + 1, npc.height + 2, 5, npc.velocity.X * 0.5f, npc.velocity.Y * 0.4f, 64, default(Color), 1.2f);
